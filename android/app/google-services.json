@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "2677274687",
+    "project_id": "sovereign-ease",
+    "storage_bucket": "sovereign-ease.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2677274687:android:f175fe5340bb555053a08a",
+        "android_client_info": {
+          "package_name": "com.webrange.sovereignEase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdJG-jfhZ7XcGiW3PZq-TojHSJaplMOYA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
