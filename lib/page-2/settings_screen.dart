@@ -65,7 +65,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     margin:
                         EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 0 * fem),
                     child: Text(
-                      '${loggedinUser!.firstName} ${loggedinUser!.lastName}',
+                      (isClient)
+                          ? '${loggedinUser!.firstName} ${loggedinUser!.lastName}'
+                          : '${loggedinUserCareProvider!.firstName} ${loggedinUserCareProvider!.lastName}',
                       style: SafeGoogleFont(
                         'Montserrat',
                         fontSize: 24 * ffem,

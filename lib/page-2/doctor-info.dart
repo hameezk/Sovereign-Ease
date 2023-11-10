@@ -56,7 +56,7 @@ class _DoctorInfoState extends State<DoctorInfo> {
                 SizedBox(
                   // autogroupgve5zND (5yRfYNYQ482Y6SLPRVgve5)
                   width: double.infinity,
-                  height: 887 * fem,
+                  height: 895 * fem,
                   child: Stack(
                     children: [
                       Positioned(
@@ -106,7 +106,7 @@ class _DoctorInfoState extends State<DoctorInfo> {
                         child: Align(
                           child: SizedBox(
                             width: 430 * fem,
-                            height: 676 * fem,
+                            height: 690 * fem,
                             child: Container(
                               decoration: BoxDecoration(
                                 border:
@@ -233,7 +233,9 @@ class _DoctorInfoState extends State<DoctorInfo> {
                                             ],
                                           ),
                                           GestureDetector(
-                                            onTap: () => showCustomSnackbar(context: context,content: 'Bookmark added'),
+                                            onTap: () => showCustomSnackbar(
+                                                context: context,
+                                                content: 'Bookmark added'),
                                             child: SizedBox(
                                               // addbookmarkkZf (112:396)
                                               width: 25 * fem,

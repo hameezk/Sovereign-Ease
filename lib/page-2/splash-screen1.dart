@@ -423,7 +423,7 @@ class _SplashScreen1State extends State<SplashScreen1> {
                 Container(
                   // youcanfindjobassignmentsmanage (17:34)
                   margin:
-                      EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 47 * fem),
+                      EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 20 * fem),
                   constraints: BoxConstraints(
                     maxWidth: 316 * fem,
                   ),
@@ -432,7 +432,7 @@ class _SplashScreen1State extends State<SplashScreen1> {
                     textAlign: TextAlign.center,
                     style: SafeGoogleFont(
                       'Poppins',
-                      fontSize: 16 * ffem,
+                      fontSize: 14 * ffem,
                       fontWeight: FontWeight.w500,
                       height: 1.5 * ffem / fem,
                       color: const Color(0xff7bcc70),

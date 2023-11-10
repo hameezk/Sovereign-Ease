@@ -477,68 +477,72 @@ class _SearchPageState extends State<SearchPage> {
     TextEditingController controller,
   ) {
     return Builder(builder: (context) {
-      return Container(
-        // autogrouprvbbEid (5yQMf3z6spgHcdq53Rrvbb)
-        margin: EdgeInsets.fromLTRB(20 * fem, 10 * fem, 20 * fem, 0 * fem),
-        padding: EdgeInsets.fromLTRB(10 * fem, 10 * fem, 10 * fem, 10 * fem),
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: const Color(0xffffffff),
-          borderRadius: BorderRadius.circular(5 * fem),
-        ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              // searchw7F (146:982)
-              margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 22 * fem, 0 * fem),
-              width: 15 * fem,
-              height: 15 * fem,
-              child: Image.asset(
-                'assets/page-2/images/search-twB.png',
-                fit: BoxFit.contain,
+      return Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          // autogrouprvbbEid (5yQMf3z6spgHcdq53Rrvbb)
+          margin: EdgeInsets.fromLTRB(20 * fem, 10 * fem, 20 * fem, 0 * fem),
+          padding: EdgeInsets.fromLTRB(10 * fem, 10 * fem, 10 * fem, 10 * fem),
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: const Color(0xffffffff),
+            borderRadius: BorderRadius.circular(5 * fem),
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                // searchw7F (146:982)
+                margin:
+                    EdgeInsets.fromLTRB(0 * fem, 0 * fem, 22 * fem, 0 * fem),
+                width: 15 * fem,
+                height: 15 * fem,
+                child: Image.asset(
+                  'assets/page-2/images/search-twB.png',
+                  fit: BoxFit.contain,
+                ),
               ),
-            ),
-            Container(
-              // searchserviceG9X (146:984)
-              width: MediaQuery.of(context).size.width * 0.6,
-              height: 15 * fem,
-              margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 0 * fem),
-              child: Center(
-                child: TextField(
-                  onChanged: (value) => setState(() {}),
-                  controller: controller,
-                  decoration: InputDecoration(
-                    hintText: 'Search $searchKey....',
-                    hintStyle: SafeGoogleFont(
+              Container(
+                // searchserviceG9X (146:984)
+                width: MediaQuery.of(context).size.width * 0.6,
+                height: 15 * fem,
+                margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 0 * fem),
+                child: Center(
+                  child: TextField(
+                    onChanged: (value) => setState(() {}),
+                    controller: controller,
+                    decoration: InputDecoration(
+                      hintText: 'Search $searchKey....',
+                      hintStyle: SafeGoogleFont(
+                        'Poppins',
+                        fontSize: 10 * ffem,
+                        fontWeight: FontWeight.w300,
+                        height: 1.5 * ffem / fem,
+                        color: const Color(0x59000000),
+                      ),
+                      border: InputBorder.none,
+                    ),
+                    style: SafeGoogleFont(
                       'Poppins',
                       fontSize: 10 * ffem,
                       fontWeight: FontWeight.w300,
                       height: 1.5 * ffem / fem,
                       color: const Color(0x59000000),
                     ),
-                    border: InputBorder.none,
-                  ),
-                  style: SafeGoogleFont(
-                    'Poppins',
-                    fontSize: 10 * ffem,
-                    fontWeight: FontWeight.w300,
-                    height: 1.5 * ffem / fem,
-                    color: const Color(0x59000000),
                   ),
                 ),
               ),
-            ),
-            // SizedBox(
-            //   // expandarrowMAy (146:997)
-            //   width: 15 * fem,
-            //   height: 15 * fem,
-            //   child: Image.asset(
-            //     'assets/page-2/images/expand-arrow-Kr9.png',
-            //     fit: BoxFit.contain,
-            //   ),
-            // ),
-          ],
+              // SizedBox(
+              //   // expandarrowMAy (146:997)
+              //   width: 15 * fem,
+              //   height: 15 * fem,
+              //   child: Image.asset(
+              //     'assets/page-2/images/expand-arrow-Kr9.png',
+              //     fit: BoxFit.contain,
+              //   ),
+              // ),
+            ],
+          ),
         ),
       );
     });
@@ -616,7 +620,7 @@ class _SearchPageState extends State<SearchPage> {
                           Container(
                             // drstrangeyGm (112:82)
                             margin: EdgeInsets.fromLTRB(
-                                0 * fem, 0 * fem, 6 * fem, 0 * fem),
+                                0 * fem, 0 * fem, 2 * fem, 0 * fem),
                             child: Text(
                               'Dr. ${careProviderModel.firstName} ${careProviderModel.lastName}',
                               style: SafeGoogleFont(

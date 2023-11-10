@@ -453,7 +453,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
         'Lorem ipsum dolor sit amet consectetur. Nunc suspendisse\nac sollicitudin cursus. Diam id vestibulum nulla est. Arcu in\nerat volutpat sagittis. Pharetra bibendum urna diam phasel\nlus faucibus consequat ridiculus sed risusLorem ipsum dolor sit amet consectetur. Nunc suspendisse\nac sollicitudin cursus. Diam id vestibulum nulla est. Arcu in\nerat volutpat sagittis. Pharetra bibendum urna diam phasel\nlus faucibus consequat ridiculus sed risusLorem ipsum dolor sit amet consectetur. Nunc suspendisse\nac sollicitudin cursus. Diam id vestibulum nulla est. Arcu in\nerat volutpat sagittis. Pharetra bibendum urna diam phasel\nlus faucibus consequat ridiculus sed risusLorem ipsum dolor sit amet consectetur. Nunc suspendisse\nac sollicitudin cursus. Diam id vestibulum nulla est. Arcu in\nerat volutpat sagittis. Pharetra bibendum urna diam phasel\nlus faucibus consequat ridiculus sed risus';
     return StatefulBuilder(builder: (context, state) {
       return GestureDetector(
-        onTap: () => navigate(context, const RateUser()),
+        // onTap: () => navigate(context, const RateUser()),
         child: Container(
           // mesasgecardVY5 (146:907)
           padding: EdgeInsets.fromLTRB(20 * fem, 5 * fem, 12 * fem, 8 * fem),
@@ -533,29 +533,36 @@ class _NotificationScreenState extends State<NotificationScreen> {
                 constraints: BoxConstraints(
                   maxWidth: 307 * fem,
                 ),
-                child: RichText(
-                  text: TextSpan(
-                    style: SafeGoogleFont(
-                      'Montserrat',
-                      fontSize: 12 * ffem,
-                      fontWeight: FontWeight.w600,
-                      height: 1.2175 * ffem / fem,
-                      color: const Color(0xb2000000),
-                    ),
-                    children: [
-                      TextSpan(text: (isExpanded) ? expandedText : normalText),
-                      TextSpan(
-                        text: (isExpanded) ? '' : 'more',
+                child: Row(
+                  children: [
+                    RichText(
+                      text: TextSpan(
                         style: SafeGoogleFont(
                           'Montserrat',
-                          fontSize: 10 * ffem,
+                          fontSize: 12 * ffem,
                           fontWeight: FontWeight.w600,
                           height: 1.2175 * ffem / fem,
-                          color: const Color(0xff7bcc70),
+                          color: const Color(0xb2000000),
                         ),
+                        children: [
+                          TextSpan(
+                              text: (isExpanded)
+                                  ? notificationModel.body ?? ''
+                                  : notificationModel.body ?? ''),
+                          TextSpan(
+                            text: (isExpanded) ? '' : '  more',
+                            style: SafeGoogleFont(
+                              'Montserrat',
+                              fontSize: 10 * ffem,
+                              fontWeight: FontWeight.w600,
+                              height: 1.2175 * ffem / fem,
+                              color: const Color(0xff7bcc70),
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
               SizedBox(

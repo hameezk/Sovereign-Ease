@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:myapp/main.dart';
 import 'package:myapp/models/care_provider_model.dart';
 import 'package:myapp/page-2/doctor-info.dart';
+import 'package:myapp/page-2/offers.dart';
 import 'package:myapp/utils.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MainScreenCareProvider extends StatefulWidget {
   const MainScreenCareProvider({super.key});
@@ -14,11 +16,18 @@ class MainScreenCareProvider extends StatefulWidget {
 
 class _MainScreenCareProviderState extends State<MainScreenCareProvider> {
   @override
+  void initState() {
+    updateLoginInfo();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     double baseWidth = 430;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return Scaffold(
+      appBar: appBar(fem),
       body: SafeArea(
         child: SingleChildScrollView(
           child: SizedBox(
@@ -41,20 +50,20 @@ class _MainScreenCareProviderState extends State<MainScreenCareProvider> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        GestureDetector(
-                          onTap: () => Navigator.pop(context),
-                          child: Container(
-                            // backFny (149:1352)
-                            margin: EdgeInsets.fromLTRB(
-                                0 * fem, 0 * fem, 0 * fem, 11 * fem),
-                            width: 35 * fem,
-                            height: 35 * fem,
-                            child: Image.asset(
-                              'assets/page-2/images/back.png',
-                              fit: BoxFit.contain,
-                            ),
-                          ),
-                        ),
+                        // GestureDetector(
+                        //   onTap: () => Navigator.pop(context),
+                        //   child: Container(
+                        //     // backFny (149:1352)
+                        //     margin: EdgeInsets.fromLTRB(
+                        //         0 * fem, 0 * fem, 0 * fem, 11 * fem),
+                        //     width: 35 * fem,
+                        //     height: 35 * fem,
+                        //     child: Image.asset(
+                        //       'assets/page-2/images/back.png',
+                        //       fit: BoxFit.contain,
+                        //     ),
+                        //   ),
+                        // ),
                         Container(
                           // helloZof (149:1315)
                           margin: EdgeInsets.fromLTRB(
@@ -208,17 +217,21 @@ class _MainScreenCareProviderState extends State<MainScreenCareProvider> {
                                 left: 129 * fem,
                                 top: 133 * fem,
                                 child: Align(
-                                  child: SizedBox(
-                                    width: 81 * fem,
-                                    height: 13 * fem,
-                                    child: Text(
-                                      'See all requests',
-                                      style: SafeGoogleFont(
-                                        'Montserrat',
-                                        fontSize: 10 * ffem,
-                                        fontWeight: FontWeight.w600,
-                                        height: 1.2175 * ffem / fem,
-                                        color: const Color(0xff7bcc70),
+                                  child: GestureDetector(
+                                    onTap: () => navigate(
+                                        context, const RequestsCareProvider()),
+                                    child: SizedBox(
+                                      width: 81 * fem,
+                                      height: 13 * fem,
+                                      child: Text(
+                                        'See all requests',
+                                        style: SafeGoogleFont(
+                                          'Montserrat',
+                                          fontSize: 10 * ffem,
+                                          fontWeight: FontWeight.w600,
+                                          height: 1.2175 * ffem / fem,
+                                          color: const Color(0xff7bcc70),
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -601,5 +614,10 @@ class _MainScreenCareProviderState extends State<MainScreenCareProvider> {
         ),
       ),
     );
+  }
+
+  Future<void> updateLoginInfo() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool('isServiceSeeker', false);
   }
 }

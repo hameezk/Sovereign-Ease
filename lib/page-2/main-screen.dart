@@ -6,6 +6,7 @@ import 'package:myapp/page-2/care-providers.dart';
 import 'package:myapp/page-2/doctor-info.dart';
 import 'package:myapp/page-2/services.dart';
 import 'package:myapp/utils.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,6 +16,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    updateLoginInfo();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 430;
@@ -1079,5 +1086,10 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
+  }
+  
+  Future<void> updateLoginInfo() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+  prefs.setBool('isServiceSeeker',true);
   }
 }
